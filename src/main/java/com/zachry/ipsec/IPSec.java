@@ -1,6 +1,7 @@
 package com.zachry.ipsec;
 
 import com.mojang.logging.LogUtils;
+import com.zachry.ipsec.items.item;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.eventbus.api.IEventBus;
@@ -24,6 +25,8 @@ public class IPSec
     public IPSec()
     {
         IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
+
+        item.register(modEventBus);
 
         modEventBus.addListener(this::commonSetup);
 
